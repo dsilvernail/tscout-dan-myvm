@@ -25,3 +25,7 @@ Route::get('login', 'HomeController@getlogin');
 
 /*---- Route for the page that shows the team and bios ----*/
 Route::get('aboutus', 'HomeController@about');
+
+Route::get('divein', 'WebserviceController@divein');
+
+Route::get('demosignin', 'WebserviceController@demosignin');

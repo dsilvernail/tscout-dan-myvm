@@ -19,7 +19,7 @@
 
 		<tr>
 			<th>
-				<h4>Marky Duart</h4>
+				<h4>Marky Duarte</h4>
 				<p> 
 					<img src="pics/marky.jpg"
 						alt="Marky Duarte"/>

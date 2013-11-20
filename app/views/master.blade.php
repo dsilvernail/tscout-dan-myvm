@@ -26,7 +26,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="#">TutorScout</a>
+					<a class="navbar-brand" href="/">TutorScout Home</a>
 				</div>
 				<div class="navbar-collapse collapse">
 					<form class="navbar-form navbar-right">
@@ -53,13 +53,15 @@
 	<div class="container">
 		@yield('content')
 
+	
+	</div> <!-- /container -->
+	<div class="container">
 		<hr>
 
 		<footer>
 			<p>JMU Senior Capstone 2013-14</p>
 		</footer>
-	</div> <!-- /container -->
-
+	</div>
 	<!-- Bootstrap core JavaScript
 	=========================================================== -->
 	<!-- Placed at end of the document so the pages load faster -->

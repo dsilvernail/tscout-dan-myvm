@@ -18,9 +18,9 @@
 		</div>
 		<div class="col-md-4">
 			<h2>Our Focus: WEBSERVICES!</h2>
-			<p>Definition of webservices (put this in later)
+			<p>Definition of webservices or some other fun fact
 			</p>
-			<p<a class="btn btn-default" href="#" role="button">Let's Dive In!</p>
+			<p<a class="btn btn-default" onclick=location.href="http://www.tutorscout.com/divein" role="button">Let's Dive In!</p>
 		</div>
 	</div>
 @stop
