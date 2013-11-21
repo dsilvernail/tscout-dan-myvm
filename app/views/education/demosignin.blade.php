@@ -62,7 +62,7 @@
 		</span>
 
 		<!-- I'm struggling to appropiately get this button to sign out of my google account and use the disconnectUser function -->
-		<p<a class="btn btn-default" button id="revokeButton" onclick="gapi.auth.signOut();" role="button">Sign Out</p>
+		<p<a class="btn btn-default" onclick=location.href="https://mail.google.com/mail/?logout&hl=en" role="button">Sign Out</p>
 	</body>
 
 @stop
