@@ -29,3 +29,5 @@ Route::get('aboutus', 'HomeController@about');
 Route::get('divein', 'WebserviceController@divein');
 
 Route::get('demosignin', 'WebserviceController@demosignin');
+
+Route::get('registration', 'HomeController@register');

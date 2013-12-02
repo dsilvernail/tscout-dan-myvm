@@ -36,4 +36,8 @@ class HomeController extends BaseController {
 		return View::make('home.about');
 	}
 
+	public function register()
+	{
+		return View::make('home.register');
+	}	
 }

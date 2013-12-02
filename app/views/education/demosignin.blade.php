@@ -4,7 +4,7 @@
 	<!-- Google plus sign-in asynchronous javascript script -->
 	<script type="text/javascript">
 		(function() {
-		var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+		var po = document.createElement('script'); po.type = 'text/javascript'; po.asynch = true;
 		po.src = 'https://apis.google.com/js/client:plusone.js';
 		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
 		})();

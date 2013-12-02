@@ -12,7 +12,9 @@
 		<link href="assets/dist/css/bootstrap.css" rel="stylesheet">
 
 		<!-- Custom styles for this template -->
-		<link href="jumbotron.css" rel="stylesheet">
+		<!-- not sure what the jumbotron.css is supposed to do everytime i give it the right path
+		---- it adds a random white space above my nav-bar 
+		<link href="assets/examples/jumbotron/jumbotron.css" rel="stylesheet"> -->
 	
 	</head>		
 	<body>
@@ -26,7 +28,9 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="/">TutorScout Home</a>
+					<a class="navbar-brand" href="/">|TutorScout Home|</a>
+					<a class="navbar-brand" href="/aboutus">|About Us|</a>
+
 				</div>
 				<div class="navbar-collapse collapse">
 					<form class="navbar-form navbar-right">
@@ -37,6 +41,7 @@
 							<input type="password" placeholder="Password" class="form-control">
 						</div>
 						<button type="submit" class="btn btn-success">Sign in</button>
+						<button type="button" class="btn btn-success" onclick=location.href="http://www.tutorscout.com/registration">Register</button>
 					</form>
 				</div><!--/.navbar-collapse -->
 			</div>
