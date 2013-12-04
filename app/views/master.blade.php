@@ -13,7 +13,7 @@
 
 		<!-- Custom styles for this template -->
 		<!-- not sure what the jumbotron.css is supposed to do everytime i give it the right path
-		---- it adds a random white space above my nav-bar 
+			 it adds a random white space above my nav-bar 
 		<link href="assets/examples/jumbotron/jumbotron.css" rel="stylesheet"> -->
 	
 	</head>		
