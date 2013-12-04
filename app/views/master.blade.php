@@ -41,7 +41,7 @@
 							<input type="password" placeholder="Password" class="form-control">
 						</div>
 						<button type="submit" class="btn btn-success">Sign in</button>
-						<button type="button" class="btn btn-success" onclick=location.href="http://www.tutorscout.com/registration">Register</button>
+						<button type="button" class="btn btn-success" onclick=location.href="http://www.tutorscout.com/register">Register</button>
 					</form>
 				</div><!--/.navbar-collapse -->
 			</div>

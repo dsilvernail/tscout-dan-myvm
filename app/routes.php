@@ -30,4 +30,8 @@ Route::get('divein', 'WebserviceController@divein');
 
 Route::get('demosignin', 'WebserviceController@demosignin');
 
-Route::get('registration', 'HomeController@register');
+Route::get('register', 'HomeController@getRegister');
+
+Route::post('register', 'HomeController@postRegister');
+
+Route::get('google', 'WebserviceController@loginWithGoogle');

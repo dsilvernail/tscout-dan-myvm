@@ -1,5 +1,5 @@
 @extends('master')
 
 @section('content')
-	<h2></h2>
+	<h2>Success</h2>
 @stop
