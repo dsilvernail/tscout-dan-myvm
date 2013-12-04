@@ -807,6 +807,12 @@ pre code {
   clear: both;
 }
 
+.rowpad {
+  margin-right: 5px;
+  margin-left: 5px;
+  padding-bottom: 20px;
+}
+
 .row {
   margin-right: -15px;
   margin-left: -15px;
@@ -2448,6 +2454,21 @@ fieldset[disabled] .btn-danger:active,
 fieldset[disabled] .btn-danger.active {
   background-color: #d9534f;
   border-color: #d43f3a;
+}
+
+.btn-google{
+  color: #ffffff;
+  background-color: #FF0000;
+  border-color: #FF0000; 
+}
+.btn-google:hover,
+.btn-google:focus,
+.btn-google:active,
+.btn-google.active,
+.open .dropdown-toggle.btn-google {
+  color: #ffffff;
+  background-color: #FF0000;
+  border-color: #FF0000;
 }
 
 .btn-success {

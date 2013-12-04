@@ -35,13 +35,15 @@
 				<div class="navbar-collapse collapse">
 					<form class="navbar-form navbar-right">
 						<div class="form-group">
-							<input type="text" placeholder="Email" class="form-control">
+							<input type="text" placeholder="Email or Username" class="form-control">
 						</div>
 						<div class="form-group">
 							<input type="password" placeholder="Password" class="form-control">
 						</div>
+
 						<button type="submit" class="btn btn-success">Sign in</button>
 						<button type="button" class="btn btn-success" onclick=location.href="http://www.tutorscout.com/register">Register</button>
+						<button type="button" class="btn btn-google" onclick=location.href="http://www.tutorscout.com/google"><b>Google +</b> Signin</button>
 					</form>
 				</div><!--/.navbar-collapse -->
 			</div>
