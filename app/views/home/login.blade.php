@@ -37,20 +37,15 @@
                             {{ Form::close() }}
                         </div>
 
-                        <div class="rowpad">
-                            <h4>Sign in with:</h4>
-                        </div>
-
-                        <div class="rowpad">
-                            <div class="col-md-2">
-                            {{ HTML::link('google', 'Google', array('class' => 'btn btn-danger')) }}
-                            {{ Form::close() }}
-                            </div>
-                    
-                        </div>
-
                 </div>
 
+            <div class="well">
+                <legend>Or sign in with:</legend>
+                
+                <div class="rowpad">
+                {{ HTML::link('google', 'Google', array('class' => 'btn btn-danger')) }}
+                {{ Form::close() }}            
+                </div>
             </div>
 
         </div>
