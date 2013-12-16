@@ -26,10 +26,42 @@ class HomeController extends BaseController {
 	}
 
 	/*---- Returns the view to the basic login page ----*/
-	public function getlogin()
+	public function getLogin()
 	{
 		return View::make('home.login');
 	}
+
+	public function postLogin()
+        {
+            $input = Input::all();
+
+            $rules = array('email' => 'required', 'password' => 'required');
+
+            $v = Validator::make($input, $rules);
+
+            if($v->fails())
+                {
+
+                    //We are redirecting our user to the /login page and returning the validation messages 
+                    return Redirect::to('login')->withErrors($v);
+
+                } else {
+                    //Creating the variable credentials to makes sure that the email entered matches the email entered when 
+                    //user registered for TutorScout ($input)
+                    $credentials = array('email' => $input['email'], 'password' => $input['password']);
+
+                    if(Auth::attempt($credentials))
+                        {
+
+                            return Redirect::to('admin');
+
+                        } else {
+                            //If the login attempt has incorrect values that don't match credentials we wil redirect our 
+                            return Redirect::to('login');
+                        }
+                }
+
+        }
 
 	public function about()
 	{
@@ -40,12 +72,12 @@ class HomeController extends BaseController {
 	{
 		return View::make('home.register');
 	}
-	 public function postRegister()
+	public function postRegister()
             {
                     /*Here we are going to grab all the input and put it into a variable called $input*/
                     $input = Input::all();
                     /*Here we are making the username, email and passwords required as well as make the email and username unique!*/
-                    $rules = array('username' => 'required|unique:users', 'email' => 'required|unique:users|email', 'password' => 'required');
+                    $rules = array('username' => 'required|unique:users', 'email' => 'required|unique:users|email', 'password' => 'required|confirmed');
 
                     $v = Validator::make($input, $rules);
 
@@ -71,4 +103,10 @@ class HomeController extends BaseController {
                             return Redirect::to('register')->withInput()->withErrors($v);
                     }
             }
+    public function logout()
+        {
+                Auth::logout();
+                return Redirect::to('/');
+        }
+
 }

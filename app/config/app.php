@@ -115,7 +115,7 @@ return array(
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 		'Cartalyst\Sentry\SentryServiceProvider',
 		'Artdarek\OAuth\OAuthServiceProvider',
-
+		'Way\Generators\GeneratorsServiceProvider'
 	),
 
 	/*

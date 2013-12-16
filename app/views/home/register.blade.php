@@ -32,7 +32,7 @@
                                 </div>
 
                                 <div class="rowpad">
-                                        {{ Form::password('password', array('placeholder' => 'Confirm Password')) }}
+                                        {{ Form::password('password_confirmation', array('placeholder' => 'Confirm Password')) }}
                                 </div>
 
                                 <div class="rowpad">
