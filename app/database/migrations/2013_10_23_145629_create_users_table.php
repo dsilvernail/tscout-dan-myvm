@@ -18,16 +18,19 @@ class CreateUsersTable extends Migration {
                         
                         $table
                                 ->string('username')
-                                ->nullabe()
+                                ->nullabe() 
                                 ->default(null);
 
                         $table
                                 ->string('email')
-                                ->nullable()
                                 ->default(null);
 
                         $table
                                 ->string('password')
+                                ->default(null);
+
+                        $table
+                                ->string('zip')
                                 ->nullable()
                                 ->default(null);
 

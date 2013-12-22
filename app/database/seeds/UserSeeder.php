@@ -7,9 +7,10 @@ class UserSeeder extends DatabaseSeeder {
 	
 		$users = [
 			[
-				"username" => "christopher.pitt",
-				"password" => Hash::make('hello'),
-				"email"    => "chris@example.com"
+				"username" => "Silver",
+				"password" => Hash::make('boston04'),
+				"email"    => "daniel.silvernail@gmail.com",
+				"zip"	   => "22801"	
 			] 
 		];
 

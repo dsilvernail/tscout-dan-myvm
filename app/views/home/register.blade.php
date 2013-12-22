@@ -3,6 +3,7 @@
 @section('content')
 
         <div class="span4 offset1">
+            
                 <div class="col-md-4">
 
                         <div class="well">

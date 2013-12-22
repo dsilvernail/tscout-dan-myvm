@@ -50,8 +50,11 @@
                 
                 {{ Form::close() }}            
                 </div>
+
             </div>
 
         </div>
+        
+    </div>
 
 @stop
