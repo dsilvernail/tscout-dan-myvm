@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\MessageBag;
+
 class HomeController extends BaseController {
 
 	/*
@@ -33,11 +35,19 @@ class HomeController extends BaseController {
 
 	public function postLogin()
         {
+
+            $errors = new MessageBag();
+
             $input = Input::all();
 
-            $rules = array('email' => 'required', 'password' => 'required');
+            $v = Validator::make($input, User::$loginrules);
 
-            $v = Validator::make($input, $rules);
+            if ($old = Input::old("errors")) 
+            {
+                $errors = $old;
+            }
+
+            $data = ["errors" => $errors];
 
             if($v->fails())
                 {
@@ -53,12 +63,18 @@ class HomeController extends BaseController {
                     if(Auth::attempt($credentials))
                         {
 
-                            return Redirect::to('admin');
+                            return Redirect::to('/profile');
 
                         } else {
                             //If the login attempt has incorrect values that don't match credentials we wil redirect our 
-                            return Redirect::to('login');
+
+
+                            $data["email"] = Input::get("email");
+
+                            return Redirect::to('login')->withInput()->withErrors(array("Email and/or password invalid"));
+
                         }
+
                 }
 
         }
@@ -77,9 +93,8 @@ class HomeController extends BaseController {
                     /*Here we are going to grab all the input and put it into a variable called $input*/
                     $input = Input::all();
                     /*Here we are making the username, email and passwords required as well as make the email and username unique!*/
-                    $rules = array('username' => 'required|unique:users', 'email' => 'required|unique:users|email', 'password' => 'required|confirmed');
-
-                    $v = Validator::make($input, $rules);
+                   
+                    $v = Validator::make($input, User::$registerrules);
 
                     if($v->passes())
                     {
@@ -106,7 +121,7 @@ class HomeController extends BaseController {
     public function logout()
         {
                 Auth::logout();
-                return Redirect::to('/');
+                return Redirect::to('login')->with('message', 'You are now logged out!');
         }
 
 }

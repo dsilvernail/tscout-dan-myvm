@@ -12,11 +12,11 @@
                         {{ Form::open(array('url' => 'login')) }}
                         <!--This will handle any errors that we get - if there are any errors we will return it with a class alert alert.error-->
                         @if($errors->any())
-                        <div class="alert alert-error">
+                            <div class="alert alert-error">
                                 <!--Shortcut for 'times'-->
                                 <a href="#" class="close" data-dismiss="alert">&times;</a>
                                 {{ implode('', $errors->all('<li class="error">:message</li>')) }}
-                        </div>
+                            </div>
                         @endif
 
                          <div class="rowpad">
@@ -26,6 +26,7 @@
 
                         <div class="rowpad">
                             {{ Form::password('password', array('placeholder' => 'Password'))}}
+                        
                         </div>
 
                          <div class="rowpad">
@@ -44,6 +45,9 @@
                 
                 <div class="rowpad">
                 {{ HTML::link('google', 'Google', array('class' => 'btn btn-danger')) }}
+
+                {{ HTML::link('facebook', 'Facebook', array('class' => 'btn btn-primary')) }}
+                
                 {{ Form::close() }}            
                 </div>
             </div>
