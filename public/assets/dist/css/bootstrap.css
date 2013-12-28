@@ -2161,6 +2161,17 @@ textarea.input-lg {
   border-color: #468847;
 }
 
+.findusers {
+        text-align: center;
+}
+
+.findusers .add-on {
+        height: 31px;
+        width: 25px;
+        font-size: 20px;
+        font-weight: bold;
+}
+
 .form-control-static {
   margin-bottom: 0;
 }

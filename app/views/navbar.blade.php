@@ -10,13 +10,24 @@
 					</button>
 					<a class="navbar-brand" href="/">Home</a>
 					<a class="navbar-brand" href="/aboutus">About</a>
+					@if (Auth::check())
+					<a class="navbar-brand" href="/findusers">Search</a>
+					@endif
 
 				</div>
 				<div class="navbar-collapse collapse">
 					<form class="navbar-form navbar-right">
-						<button type="button" class="btn btn-success" onclick=location.href="http://www.tutorscout.com/login">Sign in</button>
-						<button type="button" class="btn btn-success" onclick=location.href="http://www.tutorscout.com/register">Register</button>
-						<button type="button" class="btn btn-danger" onclick=location.href="http://www.tutorscout.com/logout">Logout</button>
+						@if (Auth::check()) 
+
+							<button type="button" class="btn btn-success" onclick=location.href="http://www.tutorscout.com/profile?"> Profile: {{ ucwords(Auth::user()->username) }}</button>
+							<button type="button" class="btn btn-danger" onclick=location.href="http://www.tutorscout.com/logout">Logout</button>
+
+						@else
+							<button type="button" class="btn btn-success" onclick=location.href="http://www.tutorscout.com/login">Sign in</button>
+							<button type="button" class="btn btn-success" onclick=location.href="http://www.tutorscout.com/register">Register</button> 
+						
+						@endif
+						
 					</form>
 				</div><!--/.navbar-collapse -->
 			</div>

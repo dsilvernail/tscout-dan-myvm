@@ -109,8 +109,14 @@ class HomeController extends BaseController {
                             $user->password = $password;
                             $user->save();
 
+                            Mail::send('emails.welcome', $input, function($message)
+                            {
+                                $message->to(Input::get('email'), 'username')->subject('Welcome!');
+                            });
                             /*This will redirect our users to the login - IF it passes*/
                             return Redirect::to('login');
+
+
 
                     } else {
                             /*Otherwise it will redirect the user back to the Register page - IF it doesn't pass`

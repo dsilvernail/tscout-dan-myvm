@@ -54,7 +54,7 @@ return array(
 	|
 	*/
 
-	'from' => array('address' => null, 'name' => null),
+	'from' => array('address' => 'daniel.silvernail@tutorscout.org', 'name' => 'Tutorscout'),
 
 	/*
 	|--------------------------------------------------------------------------

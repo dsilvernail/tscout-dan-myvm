@@ -97,4 +97,28 @@ class UserController extends BaseController {
     {
         return View::make("user/profile");
     }
+
+     public function findUsers()
+        {
+                $username = Input::get('username');
+
+                if (isset($username) && !empty($username)) {
+                        $users =  User::where('username', 'like', "%{$username}%")
+                                                        ->where('id', "!=", Auth::user()->id)
+                                                        ->get();
+                        $friends = Auth::user()->friends()->get();
+                        $friends_id = array();
+                        foreach ($friends as $f) {
+                                $friends_id[] = $f->friend_id;
+                        }
+                        
+                } else {
+                        $users = null;
+                        $friends_id = array();
+                }
+
+                return View::make('user.find')
+                        ->with('users', $users)
+                        ->with('friends_id', $friends_id);
+        }
 }
