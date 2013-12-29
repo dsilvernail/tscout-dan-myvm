@@ -1,7 +1,8 @@
 @extends('master')
 
 @section('content')
-
+        @include('jumbotron')
+        
         <div class="span4 offset1">
             
                 <div class="col-md-4">

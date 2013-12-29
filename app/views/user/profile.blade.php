@@ -13,6 +13,14 @@
 			<p>Description User can input would go here.</p>
 			<p>Zip: {{ ucwords(Auth::user()->zip) }}</p>
 		</div>
+
+		<div class="col-md-6">
+			<h2>My Profile</h2>
+		</div>
+
+		<div class="col-md-2">
+			@include('home.setup')
+		</div>
 	</div>
 
 

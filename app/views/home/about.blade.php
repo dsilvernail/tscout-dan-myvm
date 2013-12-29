@@ -1,6 +1,7 @@
 @extends('master')
 
 @section('content')
+	@include('jumbotron')
 	<h1>About Us</h1>
 	
 	<div class='row'>

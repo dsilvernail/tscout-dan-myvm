@@ -54,6 +54,7 @@ Route::group(array('before' => 'csrf'), function() {
 
     Route::post('register', 'HomeController@postRegister');
 
+
 });
 
 
@@ -64,14 +65,20 @@ Route::group(array('before' => 'auth'), function(){
         Route::any("/profile", [
             "as"   => "user/profile",
             "uses" => "UserController@profileAction"
-    ]);
+        ]);
 
 		Route::any('findusers', [
             'as' => 'user/find', 
             'uses' => 'UserController@findUsers'
-    ]);
+        ]);
 
-		Route::get('logout', 'HomeController@logout');        
+		Route::get('logout', 'HomeController@logout');   
+
+        Route::any('/setup', [
+            'as' => 'user/setup',
+            'uses' => 'UserController@profileSetup',
+        ]);
+
 });
 
 
