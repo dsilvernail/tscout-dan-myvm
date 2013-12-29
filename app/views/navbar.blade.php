@@ -12,6 +12,8 @@
 					<a class="navbar-brand" href="/aboutus">About</a>
 					@if (Auth::check())
 					<a class="navbar-brand" href="/findusers">Search</a>
+					<a class="navbar-brand" href="#opensetup">Settings</a>
+					@include('home.setup')
 					@endif
 
 				</div>
@@ -24,7 +26,9 @@
 
 						@else
 							<button type="button" class="btn btn-success" onclick=location.href="http://www.tutorscout.com/login">Sign in</button>
+							<button type="button" class="btn btn-success" onclick=location.href="#openlogin">SignModal</button>
 							<button type="button" class="btn btn-success" onclick=location.href="http://www.tutorscout.com/register">Register</button> 
+							@include('home.loginmodal')
 						
 						@endif
 						

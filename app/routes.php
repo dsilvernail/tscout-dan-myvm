@@ -54,6 +54,8 @@ Route::group(array('before' => 'csrf'), function() {
 
     Route::post('register', 'HomeController@postRegister');
 
+    Route::post('#openlogin', 'HomeController@postLogin');
+
 
 });
 

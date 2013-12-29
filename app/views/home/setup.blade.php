@@ -1,5 +1,4 @@
 @section('setup')	
-	<a href="#opensetup">Profile Settings</a>
 
 	<div id="opensetup" class="modalDialog">
 		<div>
