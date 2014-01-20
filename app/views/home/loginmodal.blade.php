@@ -1,6 +1,8 @@
 @section('loginmodal')
 	
 	<link href="assets/dist/css/webdepotmodal.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="assets/dist/js/bootstrap.min.js"></script>
 
 	 <div id="openlogin" class="modalDialog">
 		<div>
@@ -10,7 +12,7 @@
                 	<div class="well">
                         	<legend>Please Login</legend>
                         	<!--This will open up the login in form and we will open it at the url 'login'-->
-                        	{{ Form::open(array('url' => '#openlogin')) }}
+                        	{{ Form::open(array('url' => '/#openlogin')) }}
                         	<!--This will handle any errors that we get - if there are any errors we will return it with a class alert alert.error-->
                         	@if($errors->any())
                             	<div class="alert alert-error">
@@ -31,11 +33,12 @@
 
                         	<div class="rowpad">
                             	{{ Form::submit('Login', array('class' => 'btn btn-success')) }}
+                                {{ Form::close() }}
                         	</div>
 
                         	<div class="rowpad">
                             	{{ HTML::link('register', 'Register', array('class' => 'btn btn-primary')) }}
-                            	{{ Form::close() }}
+                            
                         	</div>
 
                 	</div>

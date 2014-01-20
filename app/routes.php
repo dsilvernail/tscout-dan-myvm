@@ -54,7 +54,10 @@ Route::group(array('before' => 'csrf'), function() {
 
     Route::post('register', 'HomeController@postRegister');
 
-    Route::post('#openlogin', 'HomeController@postLogin');
+    Route::any('/#openlogin', [
+        "as" => "home/loginmodal",
+        "uses" => "HomeController@postLogin"
+    ]);
 
 
 });
