@@ -469,6 +469,10 @@ cite {
   text-align: center;
 }
 
+.text-indent {
+  text-indent: 50px;
+}
+
 h1,
 h2,
 h3,

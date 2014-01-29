@@ -4,11 +4,11 @@
 
     <div class="span4 offset1">
 
-        <div class="col-md-4">
+        <div class="col-md-4 col-md-offset-3">
 
             <div class="well">
 
-                <legend>Reset Password</legend>
+                <legend class="text-center">Reset Password</legend>
                 {{ Form::open([
                     "url"          => URL::route("user/reset") . $token,
                     "autocomplete" => "off"
@@ -20,7 +20,7 @@
                 </div>
                 @endif
 
-                <div class='rowpad'>
+                <div class='rowpad text-right'>
                     {{ Form::label("email", "Email") }}
                     {{ Form::text("email", Input::get("email"), [
                         "placeholder" => "john@example.com"
@@ -33,7 +33,7 @@
                 </div>
                 @endif
 
-                <div class='rowpad'>
+                <div class='rowpad text-right'>
                     {{ Form::label("password", "Password") }}
                     {{ Form::password("password", [
                         "placeholder" => "••••••••••"
@@ -46,7 +46,7 @@
                 </div>
                 @endif
 
-                <div class='rowpad'>
+                <div class='rowpad text-right'>
                     {{ Form::label("password_confirmation", "Confirm") }}
                     {{ Form::password("password_confirmation", [
                         "placeholder" => "••••••••••"
@@ -59,7 +59,7 @@
                 </div>
                 @endif
 
-                <div class='rowpad'>
+                <div class='rowpad text-right'>
                     {{ Form::submit("Reset", array('class' => 'btn btn-success')) }}
                     {{ Form::close() }}
                 </div>

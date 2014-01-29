@@ -57,6 +57,15 @@
 
         </div>
         
+        <div class='col-md-8'>
+            <h1><dt>Welcome to the TutorScout education network.</dt></h1>
+            <h3 class="text-indent">Network with individuals in the pursuit of knowledge.</h3>
+            <h3 class="text-indent">Become a tutor and get paid.</h3>
+            <h3 class="text-indent"></h3>
+        </div>
+
+
+
     </div>
 
 @stop

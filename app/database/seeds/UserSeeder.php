@@ -9,8 +9,7 @@ class UserSeeder extends DatabaseSeeder {
 			[
 				"username" => "Silver",
 				"password" => Hash::make('boston04'),
-				"email"    => "daniel.silvernail@gmail.com",
-				"zip"	   => "22801"	
+				"email"    => "daniel.silvernail@gmail.com"	
 			] 
 		];
 

@@ -34,6 +34,7 @@ class WebserviceController extends BaseController {
         	$message = 'Your unique Google user id is: ' . $result['id'] . ' and your name is ' . $result['name'];
         	echo $message. "<br/>";
 
+            if ( $result['email'] == User::)
         	//Var_dump
         	//display whole array().
         	dd($result);

@@ -50,10 +50,10 @@
                 </div>
 
                 <div class="col-md-8">
-                        <h2>JOIN THE TUTORSCOUT NETWORK!!</h2>
-                        <p>
+                        <h1>JOIN THE TUTORSCOUT NETWORK!!</h1>
+                        <h3>
                                Why you should join!!
-                        </p>
+                        </h3>
                 </div>
         </div>
 

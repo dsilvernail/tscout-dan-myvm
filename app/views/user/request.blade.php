@@ -4,9 +4,9 @@
 
     <div class="span4 offset1">
 
-            <div class="col-md-4">
+            <div class="col-md-4 col-md-offset-3">
 
-                <div class="well">
+                <div class="well text-center">
 
                     <legend>Reset Password Request</legend>
                     {{ Form::open([
