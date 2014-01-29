@@ -1,8 +1,8 @@
 @section('loginmodal')
 	
-	<link href="assets/dist/css/webdepotmodal.css" rel="stylesheet">
+	<link href="{{ URL::to('assets/dist/css/webdepotmodal.css') }}" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="assets/dist/js/bootstrap.min.js"></script>
+    <script src="{{ URL::to('assets/dist/js/bootstrap.min.js') }}"></script>
 
 	 <div id="openlogin" class="modalDialog">
 		<div>
