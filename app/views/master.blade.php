@@ -9,7 +9,7 @@
 		<title>Tutorscout</title>
 
 		<!-- Bootstrap core CSS -->
-		<link href="assets/dist/css/bootstrap.css" rel="stylesheet">
+		<link href= "{{ URL::to('assets/dist/css/bootstrap.css') }}" rel="stylesheet">
 
 		<!-- Custom styles for this template -->
 		<!-- not sure what the jumbotron.css is supposed to do everytime i give it the right path
@@ -42,6 +42,6 @@
 	=========================================================== -->
 	<!-- Placed at end of the document so the pages load faster -->
 	<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-	<script src="assets/dist/js/bootstrap.min.js"></script>
+	<script src="http://www.tutorscout.com/assets/dist/js/bootstrap.min.js"></script>
 </body>
 </html>

@@ -9,6 +9,6 @@
 		</div>
 	</div>
 
-	<link href="assets/dist/css/webdepotmodal.css" rel="stylesheet">
+	<link href="{{ URL::asset('assets/dist/css/webdepotmodal.css') }}" rel="stylesheet">
 
 @show
