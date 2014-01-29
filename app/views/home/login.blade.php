@@ -32,6 +32,7 @@
 
                          <div class="rowpad">
                             {{ Form::submit('Login', array('class' => 'btn btn-success')) }}
+                            {{ HTML::link('request', 'Forgot Password?', array('class' => 'btn')) }}
                         </div>
 
                          <div class="rowpad">

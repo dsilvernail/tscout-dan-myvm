@@ -93,5 +93,6 @@ Route::group(array('before' => array('auth', 'csrf')), function() {
 });
 
 
+Route::resource('profiles', 'ProfilesController');
 
 
