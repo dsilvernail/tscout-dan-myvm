@@ -15,7 +15,7 @@ class UserSeeder extends DatabaseSeeder {
 			[
 				"username" => "DirtyDave",
 				"password" => Hash::make('daved'),
-				"email"    => 'daniel.silvernail@gmail.com'
+				"email"    => 'dave.silvernail@gmail.com'
 
 			]
 		];
