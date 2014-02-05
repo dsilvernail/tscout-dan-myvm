@@ -95,7 +95,10 @@ class UserController extends BaseController {
 
     public function profileAction()
     {
-        return View::make("user/profile");
+        $user_id = Auth::user()->id;
+
+        $profile = Profile::find($user_id);
+        return View::make("user/profile", compact('profile'));
     }
 
      public function findUsers()

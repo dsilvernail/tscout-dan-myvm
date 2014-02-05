@@ -11,11 +11,11 @@
 		<div class="col-md-4">
 			<h2>About Me:</h2>
 			<p>Description User can input would go here.</p>
-			<p>Zip: {{ ucwords(Auth::user()->zip) }}</p>
+
 		</div>
 
 		<div class="col-md-6">
-			<h2>My Profile</h2>
+			<h2>My Profile: {{ $profile->about }}</h2>
 		</div>
 		
 	</div>

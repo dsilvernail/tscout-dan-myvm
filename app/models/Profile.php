@@ -9,6 +9,8 @@ class Profile extends Eloquent {
 		return $this->belongsTo('User');
 	}
 
+
+
 	protected $guarded = array();
 
 	public static $rules = array();

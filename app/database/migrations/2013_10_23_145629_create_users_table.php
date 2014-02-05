@@ -29,11 +29,6 @@ class CreateUsersTable extends Migration {
                                 ->string('password')
                                 ->default(null);
 
-                        $table
-                                ->string('zip')
-                                ->nullable()
-                                ->default(null);
-
                         $table->timestamps();
                 });
         }
