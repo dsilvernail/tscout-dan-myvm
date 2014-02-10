@@ -109,6 +109,11 @@ class HomeController extends BaseController {
                             $user->password = $password;
                             $user->save();
 
+                            $profile = new Profile();
+                            $profile->username = $input['username'];
+                            $profile->save();
+
+
                             Mail::send('emails.welcome', $input, function($message)
                             {
                                 $message->to(Input::get('email'), 'username')->subject('Welcome!');

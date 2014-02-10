@@ -29,6 +29,12 @@ class CreateUsersTable extends Migration {
                                 ->string('password')
                                 ->default(null);
 
+                        $table
+                                ->string('google_id');
+
+                        $table
+                                ->string('facebook_id');
+
                         $table->timestamps();
                 });
         }

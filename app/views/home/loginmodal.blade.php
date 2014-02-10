@@ -3,6 +3,7 @@
 	<link href="{{ URL::to('assets/dist/css/webdepotmodal.css') }}" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="{{ URL::to('assets/dist/js/bootstrap.min.js') }}"></script>
+    <script type="text/javascript" src="assets/js/script.js"></script>
 
 	 <div id="openlogin" class="modalDialog">
 		<div>

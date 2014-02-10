@@ -31,29 +31,45 @@ class WebserviceController extends BaseController {
         	// Send a request with it
         	$result = json_decode( $googleService->request( 'https://www.googleapis.com/oauth2/v1/userinfo' ), true );
 
-        	$message = 'Your unique Google user id is: ' . $result['id'] . ' and your name is ' . $result['name'];
-        	echo $message. "<br/>";
 
-            $email = User::where("email", "==", $result["email"]);
+            $user = ['google_id' => $result['id'] ];
 
-            if ( $result['email'] != $email ) {
+            $user = User::where("google_id", "=", $user['google_id'])->first();
 
-                $user           = new User();
-                $user->email    = $result["email"];
-                $user->username = $result["name"];
-                $user->save();
-                dd($result);
+            if ( $user ) {
+
+                Auth::login( $user );
+
+                $message = 'Your unique Google user id is: ' . $result['id'] . ' and your name is ' . $result['name'];
+
+                return Redirect::to( '/profile')->with( 'message', $message);
 
             }
 
             else {
+                //first time google login
 
+                //create new user and save in db
+                $user = new User();
+                $user->username = $result['name'];
+                $user->email = $result['email'];
+                $user->google_id = $result['id'];
+                $user->save();
 
-                //Var_dump
-                //display whole array().
-                dd('user exists');
+                $profile = new Profile();
+                $profile->username = $result['name'];
+                $profile->save();
+
+                Auth::login($user);
+
+                $message_success = 'Your unique google user id is: ' . $result['id'] . ' and your name is ' . $result['name'];
+                $message_notice  = 'Account Created.';
+
+                return Redirect::to( '/profile' )
+                        ->with( 'message', $message_notice );
+
             }
-        	
+
 
     	}
     	// if not ask for permission first

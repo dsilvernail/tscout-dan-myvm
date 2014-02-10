@@ -12,7 +12,7 @@
 					<a class="navbar-brand" href="/aboutus">About</a>
 					@if (Auth::check())
 					<a class="navbar-brand" href="/findusers">Search</a>
-					<a class="navbar-brand" href="#opensetup">Settings</a>
+					<a class="navbar-brand" href="#opensetup">SettingsModal</a>
 					@include('home.setup')
 					@endif
 
@@ -21,13 +21,13 @@
 					<form class="navbar-form navbar-right">
 						@if (Auth::check()) 
 
-							<button type="button" class="btn btn-success" onclick=location.href="http://www.tutorscout.com/profile?"> Profile: {{ ucwords(Auth::user()->username) }}</button>
-							<button type="button" class="btn btn-danger" onclick=location.href="http://www.tutorscout.com/logout">Logout</button>
+							<button type="button" class="btn btn-success" onclick=location.href="{{ URL::to('/profile') }}"> Profile: {{ ucwords(Auth::user()->username) }}</button>
+							<button type="button" class="btn btn-danger" onclick=location.href="{{ URL::to('/logout') }}">Logout</button>
 
 						@else
-							<button type="button" class="btn btn-success" onclick=location.href="http://www.tutorscout.com/login">Sign in</button>
-							<button type="button" class="btn btn-success" onclick=location.href="#openlogin">SignModal</button>
-							<button type="button" class="btn btn-success" onclick=location.href="http://www.tutorscout.com/register">Register</button> 
+							<button type="button" class="btn btn-success" onclick=location.href="{{ URL::to('/login') }}">Sign in</button>
+							<button type="button" class="btn btn-success" onclick=location.href="{{ URL::to('#openlogin') }}">SignModal</button>
+							<button type="button" class="btn btn-success" onclick=location.href="{{ URL::to('/register') }}">Register</button> 
 							@include('home.loginmodal')
 						
 						@endif
