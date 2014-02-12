@@ -45,6 +45,7 @@
                                                         <td>
                                                                 @if(in_array($user->id, $friends_id))
                                                                         <button class="btn btn-block btn-danger">Unfollow</button>
+
                                                                 @else
                                                                         <button class="btn btn-block btn-success">Follow</button>
                                                                 @endif

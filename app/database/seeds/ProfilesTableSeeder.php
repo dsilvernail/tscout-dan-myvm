@@ -20,9 +20,9 @@ class ProfilesTableSeeder extends DatabaseSeeder {
 			],
 
 			[
-				"username" => "DirtyDave",
-				"f_name"   => "Dave",
-				"l_name"   => "DiPascal",
+				"username" => "sasekkl",
+				"f_name"   => "Katie",
+				"l_name"   => "Sasek",
 				"age"      => "21",
 				"zip"      => "22801",
 				"about"    => "Tutorscout is Great!",

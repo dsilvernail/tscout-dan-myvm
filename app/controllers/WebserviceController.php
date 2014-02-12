@@ -62,11 +62,10 @@ class WebserviceController extends BaseController {
 
                 Auth::login($user);
 
-                $message_success = 'Your unique google user id is: ' . $result['id'] . ' and your name is ' . $result['name'];
+                //$message_success = 'Your unique google user id is: ' . $result['id'] . ' and your name is ' . $result['name'];
                 $message_notice  = 'Account Created.';
 
-                return Redirect::to( '/profile' )
-                        ->with( 'message', $message_notice );
+                return Redirect::to( '/profile' )->with( 'message', $message_notice );
 
             }
 
@@ -102,11 +101,47 @@ class WebserviceController extends BaseController {
             $result = json_decode( $fb->request( '/me' ), true );
 
             $message = 'Your unique facebook user id is: ' . $result['id'] . ' and your name is ' . $result['name'];
-            echo $message. "<br/>";
+            
+            $user = ['facebook_id' => $result['id'] ];
 
-            //Var_dump
-            //display whole array().
-            dd($result);
+            $user = User::where("facebook_id", "=", $user['facebook_id'])->first();
+
+            if ( $user ) {
+
+                Auth::login( $user );
+
+                $message = 'Your unique Facebook user id is: ' . $result['id'] . ' and your name is ' . $result['name'];
+
+                return Redirect::to( '/profile')->with( 'message', $message);
+
+            }
+
+            else {
+
+                
+
+
+                //first time facebook login
+
+                //create new user and save in db
+                $user = new User();
+                $user->username = $result['name'];
+                $user->email = $result["email"];
+                $user->facebook_id = $result['id'];
+                $user->save();
+
+                $profile = new Profile();
+                $profile->username = $result['name'];
+                $profile->save();
+
+                Auth::login($user);
+
+                //$message_success = 'Your unique google user id is: ' . $result['id'] . ' and your name is ' . $result['name'];
+                $message_notice  = 'Account Created.';
+
+                return Redirect::to( '/profile' )->with( 'message', $message_notice );
+
+            }
 
         }
         // if not ask for permission first
