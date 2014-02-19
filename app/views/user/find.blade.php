@@ -41,13 +41,15 @@
                                         @else
                                                 @foreach($users as $user)
                                                 <tr>
-                                                        <td>{{$user->username}}</td>
+                                                        <td onclick=location.href="{{ route('profiles.show', ['profiles' => $user->id]) }}">{{$user->username}}</td>
+
                                                         <td>
                                                                 @if(in_array($user->id, $friends_id))
                                                                         <button class="btn btn-block btn-danger">Unfollow</button>
 
                                                                 @else
-                                                                        <button class="btn btn-block btn-success">Follow</button>
+                                                                        <button class="btn btn-block btn-success" onclick=location.href="{{ route('profiles.update', ['profiles' => $user->id]) }}">Follow</button>
+                                        
                                                                 @endif
                                                         </td>
                                                 </tr>

@@ -77,12 +77,19 @@ Route::group(array('before' => 'auth'), function(){
             'uses' => 'UserController@findUsers'
         ]);
 
+        Route::any('followusers', [
+            'as' => 'follow',
+            'uses' => 'ProfilesController@update'
+        ]);
+
 		Route::get('logout', 'HomeController@logout');   
 
         Route::any('/setup', [
             'as' => 'user/setup',
             'uses' => 'UserController@profileSetup',
         ]);
+
+        Route::resource('profiles', 'ProfilesController');
 
 });
 
@@ -93,6 +100,6 @@ Route::group(array('before' => array('auth', 'csrf')), function() {
 });
 
 
-Route::resource('profiles', 'ProfilesController');
+
 
 

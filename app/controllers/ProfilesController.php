@@ -11,6 +11,8 @@ class ProfilesController extends BaseController {
 	{
         $profiles = Profile::all();
         return View::make('profiles.index', compact('profiles'));
+
+
 	}
 
 	/**
@@ -41,9 +43,15 @@ class ProfilesController extends BaseController {
 	 */
 	public function show($id)
 	{
-		$profile = Profile::find($id);	
+		$profile = Profile::find($id);
+
+		$message = "This is just an example message!";
+
+    	Pusherer::trigger('my-channel', 'my-event', array( 'message' => $message ));
+
         return View::make('profiles.show', compact('profile'));
 	}
+
 
 	/**
 	 * Show the form for editing the specified resource.
@@ -64,7 +72,14 @@ class ProfilesController extends BaseController {
 	 */
 	public function update($id)
 	{
-		//
+		$user_id = Auth::user()->$id;
+
+        $friend_id = Profile::find($id);
+
+       	$message = 'You are now following' . $friend_id;
+
+        return Redirect::to('/aboutus')->with('message', 'you have tried to follow');
+
 	}
 
 	/**

@@ -26,7 +26,7 @@ class ProfilesTableSeeder extends DatabaseSeeder {
 				"age"      => "21",
 				"zip"      => "22801",
 				"about"    => "Tutorscout is Great!",
-				"imgpath"  => "/pics/dan2.jpg"
+				"imgpath"  => "/pics/katie.jpg"
 
 			]
 		];
