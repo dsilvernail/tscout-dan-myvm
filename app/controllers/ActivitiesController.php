@@ -1,6 +1,6 @@
 <?php
 
-class ProfilesController extends BaseController {
+class ActivitiesController extends BaseController {
 
 	/**
 	 * Display a listing of the resource.
@@ -9,10 +9,10 @@ class ProfilesController extends BaseController {
 	 */
 	public function index()
 	{
-        $profiles = Profile::all();
-        return View::make('profiles.index', compact('profiles'));
+		$message = "This is just an example message!";
+    	Pusherer::trigger('my-channel', 'my-event', array( 'message' => $message ));
 
-
+        return View::make('activities.index');
 	}
 
 	/**
@@ -22,7 +22,7 @@ class ProfilesController extends BaseController {
 	 */
 	public function create()
 	{
-        return View::make('profiles.create');
+        return View::make('activities.create');
 	}
 
 	/**
@@ -43,12 +43,8 @@ class ProfilesController extends BaseController {
 	 */
 	public function show($id)
 	{
-		$profile = Profile::find($id);
-
-
-        return View::make('profiles.show', compact('profile'));
+        return View::make('activities.show');
 	}
-
 
 	/**
 	 * Show the form for editing the specified resource.
@@ -58,7 +54,7 @@ class ProfilesController extends BaseController {
 	 */
 	public function edit($id)
 	{
-        return View::make('profiles.edit');
+        return View::make('activities.edit');
 	}
 
 	/**
@@ -69,14 +65,7 @@ class ProfilesController extends BaseController {
 	 */
 	public function update($id)
 	{
-		$user_id = Auth::user()->$id;
-
-        $friend_id = Profile::find($id);
-
-       	$message = 'You are now following' . $friend_id;
-
-        return Redirect::to('/aboutus')->with('message', 'you have tried to follow');
-
+		//
 	}
 
 	/**

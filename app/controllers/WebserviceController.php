@@ -31,10 +31,15 @@ class WebserviceController extends BaseController {
         	// Send a request with it
         	$result = json_decode( $googleService->request( 'https://www.googleapis.com/oauth2/v1/userinfo' ), true );
 
+            $email = [ "email" => $result["email"] ];
 
-            $user = ['google_id' => $result['id'] ];
+            $email = User::where("email", "=", $user["email"])->first();
 
-            $user = User::where("google_id", "=", $user['google_id'])->first();
+            $user = [ "google_id" => $result["id"] ];
+
+            $user = User::where("google_id", "=", $user["google_id"])->first();
+
+
 
             if ( $user ) {
 

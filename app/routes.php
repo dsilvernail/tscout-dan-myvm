@@ -103,3 +103,6 @@ Route::group(array('before' => array('auth', 'csrf')), function() {
 
 
 
+
+
+Route::resource('activities', 'ActivitiesController');
