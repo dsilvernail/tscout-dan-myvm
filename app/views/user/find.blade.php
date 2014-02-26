@@ -48,7 +48,12 @@
                                                                         <button class="btn btn-block btn-danger">Unfollow</button>
 
                                                                 @else
-                                                                        <button class="btn btn-block btn-success" onclick=location.href="{{ route('profiles.update', ['profiles' => $user->id]) }}">Follow</button>
+                                                                       
+
+                                                                        {{ Form::open(array('url' => 'profiles/' . $user->id, 'class' => 'btn btn-block btn-success')) }}
+                                                                        {{ Form::hidden('_method', 'UPDATE') }}
+                                                                        {{ Form::submit('Follow this NERD', array('class' => 'btn btn-block btn-success' )) }}
+                                                                        {{ Form::close() }}
                                         
                                                                 @endif
                                                         </td>

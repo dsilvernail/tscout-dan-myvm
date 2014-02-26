@@ -77,12 +77,7 @@ Route::group(array('before' => 'auth'), function(){
             'uses' => 'UserController@findUsers'
         ]);
 
-        Route::any('followusers', [
-            'as' => 'follow',
-            'uses' => 'ProfilesController@update'
-        ]);
-
-		Route::get('logout', 'HomeController@logout');   
+		Route::get('logout', 'HomeController@logout'); 
 
         Route::any('/setup', [
             'as' => 'user/setup',
