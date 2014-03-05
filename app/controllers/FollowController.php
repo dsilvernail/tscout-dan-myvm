@@ -2,15 +2,32 @@
 
 class FollowController extends BaseController {
 
-	public function follow($id)
+	public function postFollow($id_follow)
 	{
-        $user_id = Auth::user()->$id;
+		$profile = Profile::find($id_follow);
 
-        $friend_id = Profile::find($id);
+		$friend            = new Friend();
+		$friend->friend_id = $id_follow;
+		$friend->user_id   = Auth::user()->id;
+		$friend->save();
 
-        return Redirect::to('/profile')->with('message', 'You have tried to follow someone!');
+       	$message = 'You are now following this user';
 
+        return View::make('profiles.show', compact('profile'))->with('message', $message);
 
+	}
+
+	public function destroyFollow($id_follow)
+	{
+		$unfollow = Friend::where('user_id', '=', Auth::user()->id)
+							->where('friend_id', '=', $id_unfollow)
+							->first();
+
+		Friend::destroy($unfollow);
+
+		$profile = Auth::user()->id;
+
+		return View::make("user/profile", compact('profile'));
 	}
 
 }

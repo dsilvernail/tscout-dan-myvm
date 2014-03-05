@@ -77,6 +77,10 @@ Route::group(array('before' => 'auth'), function(){
             'uses' => 'UserController@findUsers'
         ]);
 
+        Route::post('follow/{id_follow}','FollowController@postFollow');
+
+        Route::delete('follow/{id_follow}', 'FollowController@destroyFollow');
+
 		Route::get('logout', 'HomeController@logout'); 
 
         Route::any('/setup', [

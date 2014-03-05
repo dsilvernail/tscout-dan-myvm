@@ -69,18 +69,6 @@ class ProfilesController extends BaseController {
 	 */
 	public function update($id)
 	{	
-		/*$friend = [ "friend_id" => Profile::find($id) ];
-
-		$user = [ "user_id" => Auth::user()->$id ];
- 
-		$friend            = new Friend();
-		$friend->user_id   => $user["user_id"];
-		$friend->friend_id => $friend["friend_id"];
-		$friend->save();
-
-       	$message = 'You are now following' . $friend_id;
-
-        return View::make('profiles.show')->with('message', $message); */
 
 	}
 

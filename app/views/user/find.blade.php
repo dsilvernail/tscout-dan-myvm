@@ -45,16 +45,20 @@
 
                                                         <td>
                                                                 @if(in_array($user->id, $friends_id))
-                                                                        <button class="btn btn-block btn-danger">Unfollow</button>
+
+                                                                        {{ Form::open(array('action' => array('FollowController@destroyFollow', $user->id))) }}
+
+                                                                        {{ Form::submit('Unfollow', array('class' => 'btn btn-block btn-danger')) }}
+
+                                                                        {{ Form::close() }}
 
                                                                 @else
-                                                                       
+                                                                        
+                                                                        {{ Form::open(array('action' => array('FollowController@postFollow', $user->id))) }}
 
-                                                                        {{ Form::open(array('url' => 'profiles/' . $user->id, 'class' => 'btn btn-block btn-success')) }}
-                                                                        {{ Form::hidden('_method', 'UPDATE') }}
-                                                                        {{ Form::submit('Follow this NERD', array('class' => 'btn btn-block btn-success' )) }}
+                                                                        {{ Form::submit('Follow', array('class' => 'btn btn-block btn-success')) }}
+
                                                                         {{ Form::close() }}
-                                        
                                                                 @endif
                                                         </td>
                                                 </tr>

@@ -16,6 +16,11 @@ class CreateFriendsTable extends Migration {
                     $table->integer('user_id');
                     $table->integer('friend_id');
                     $table->timestamps();
+                    $table->unique(array('user_id', 'friend_id'));
+                    /* 
+                    	when migrating to next stage of development will be adding composite key constraints
+                    	$table->primary(array('user_id', 'friend_id')); 
+                    */
                 });
 	}
 
