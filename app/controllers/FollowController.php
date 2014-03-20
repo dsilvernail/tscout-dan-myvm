@@ -20,14 +20,17 @@ class FollowController extends BaseController {
 	public function destroyFollow($id_follow)
 	{
 		$unfollow = Friend::where('user_id', '=', Auth::user()->id)
-							->where('friend_id', '=', $id_unfollow)
+							->where('friend_id', '=', $id_follow)
 							->first();
+
+		$unfollow = Friend::Find($unfollow);
 
 		Friend::destroy($unfollow);
 
 		$profile = Auth::user()->id;
 
-		return View::make("user/profile", compact('profile'));
+		return Redirect::to("user/profile")->with('message', "You have unfollowed this person");
+
 	}
 
 }
