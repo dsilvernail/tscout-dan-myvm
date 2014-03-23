@@ -31,6 +31,21 @@
 		</div>
 		
 	</div>
+
+	<div class="row">
+
+		<div class="col-md-4">
+			<h3>Comment</h3>
+		</div>
+
+		<div class="col-md-8">
+
+			@include('activities.show')
+
+		</div>
+
+	</div>
+
 	<div class="rowpad">
 
 		<div class="col-md-4">
@@ -38,19 +53,13 @@
 			<h3>Following</h3>
 
 		</div>
+
 		<div class="col-md-8" align="left">
-			<div class="rowpad">
-				<h3>Review</h3>
-				{{ Form::textarea('post', '', array('placeholder' => 'Post your review')) }}
-			</div>
-			<div class="rowpad" align="center">
-				 {{ Form::submit('Submit', array('class' => 'btn btn-success')) }}
-			</div>
-			<div class="rowpad">
+
 				 @include('activities.index')
-			</div>
 
 		</div>	
 
 	</div>
+
 @stop
