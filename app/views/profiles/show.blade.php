@@ -56,7 +56,6 @@
 
 		<div class="col-md-8" align="left">
 
-				 @include('activities.index')
 
 		</div>	
 

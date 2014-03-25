@@ -41,7 +41,11 @@
 	<!-- Bootstrap core JavaScript
 	=========================================================== -->
 	<!-- Placed at end of the document so the pages load faster -->
+	
 	<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
 	<script src="http://www.tutorscout.com/assets/dist/js/bootstrap.min.js"></script>
+	<script src="http://js.pusher.com/2.1/pusher.min.js"></script>
+	<script src="{{URL::to('assets/dist/js/app.js')}}"></script>
+	
 </body>
 </html>

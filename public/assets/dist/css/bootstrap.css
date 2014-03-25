@@ -7173,7 +7173,9 @@ li:last-child .hentry, #content > .hentry {border: 0; margin: 0;}
   #respond {
   margin-top: 40px;
 }
-
+#posts-list.has-comments li.no-comments {
+  display: none;
+}
 #respond input[type='text'],
 #respond input[type='email'], 
 #respond textarea {

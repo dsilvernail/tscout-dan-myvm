@@ -79,7 +79,7 @@ Route::group(array('before' => 'auth'), function(){
 
         Route::post('follow/{id_follow}','FollowController@postFollow');
 
-        Route::delete('follow/{id_follow}', 'FollowController@destroyFollow');
+        Route::any('unfollow/{id_follow}', 'FollowController@destroyFollow');
 
 		Route::get('logout', 'HomeController@logout'); 
 
@@ -89,7 +89,8 @@ Route::group(array('before' => 'auth'), function(){
         ]);
 
         Route::resource('profiles', 'ProfilesController');
-
+        
+        Route::any('post_comment.php', 'post_comment');
 });
 
 

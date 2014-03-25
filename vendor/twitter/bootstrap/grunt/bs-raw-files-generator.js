@@ -1,14 +1,15 @@
-/* global btoa: true */
 /*!
  * Bootstrap Grunt task for generating raw-files.min.js for the Customizer
  * http://getbootstrap.com
  * Copyright 2014 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
+
+/* global btoa: true */
+
 'use strict';
 var fs = require('fs');
 var btoa = require('btoa');
-var grunt = require('grunt');
 
 function getFiles(type) {
   var files = {};
@@ -23,7 +24,7 @@ function getFiles(type) {
   return 'var __' + type + ' = ' + JSON.stringify(files) + '\n';
 }
 
-module.exports = function generateRawFilesJs(banner) {
+module.exports = function generateRawFilesJs(grunt, banner) {
   if (!banner) {
     banner = '';
   }

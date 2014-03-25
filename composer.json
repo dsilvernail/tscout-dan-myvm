@@ -8,7 +8,7 @@
 		"twitter/bootstrap": "*",
 		"cartalyst/sentry": "2.0.*",
 		"artdarek/oauth-4-laravel": "dev-master",
-		"way/generators": "dev-master",
+		"way/generators": "1.1",
 		"artdarek/pusherer": "dev-master"
 	},
 	"autoload": {
