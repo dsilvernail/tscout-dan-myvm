@@ -111,6 +111,7 @@ class HomeController extends BaseController {
 
                             $profile = new Profile();
                             $profile->username = $input['username'];
+                            $profile->imgpath  = "/pics/default.jpg";
                             $profile->save();
 
 

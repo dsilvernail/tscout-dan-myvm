@@ -41,10 +41,11 @@
                                         @else
                                                 @foreach($users as $user)
                                                 <tr>
-                                                        <td onclick=location.href="{{ route('profiles.show', ['profiles' => $user->id]) }}">{{$user->username}}</td>
+                                                        @if(in_array($user->id, $friends_id))
+                                                                
+                                                                <td onclick=location.href="{{ route('profiles.show', ['profiles' => $user->id]) }}">{{$user->username}}</td>
 
-                                                        <td>
-                                                                @if(in_array($user->id, $friends_id))
+                                                                <td>
 
                                                                         {{ Form::open(array('action' => array('FollowController@destroyFollow', $user->id))) }}
 
@@ -52,15 +53,20 @@
 
                                                                         {{ Form::close() }}
 
-                                                                @else
-                                                                        
+                                                                </td>
+
+                                                        @else
+                                                                <td>{{$user->username}}</td>
+
+                                                                <td>  
                                                                         {{ Form::open(array('action' => array('FollowController@postFollow', $user->id))) }}
 
                                                                         {{ Form::submit('Follow', array('class' => 'btn btn-block btn-success')) }}
 
                                                                         {{ Form::close() }}
-                                                                @endif
-                                                        </td>
+                                                                </td>
+                                                        @endif
+                                                
                                                 </tr>
                                                 @endforeach
                                         @endif

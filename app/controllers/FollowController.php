@@ -12,7 +12,7 @@ class FollowController extends BaseController {
 
        	$message = 'You are now following this user';
 
-        return Redirect::route('profiles.show', [$id_follow]);
+        return Redirect::route('profiles.show', [$id_follow])->with('message',$message);
 
 	}
 

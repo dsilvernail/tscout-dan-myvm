@@ -9,20 +9,25 @@
 		$has_comments = (count($comments) > 0);
 	?>
 	
+
+
 	<div id="respond">
+
+		<link href= "{{ URL::to('assets/dist/css/comment.css') }}" rel="stylesheet">
 
 		<h3>Leave a Comment</h3>
 
-		<form action="post_comment" method="post" id="commentform">
+		<form action="http://www.tutorscout.com/posts/post_comment" method="post" id="commentform">
+			{{ Form::hidden('profileID', $profile->id) }}
 
 			<label for="comment_author" class="required">Your name</label>
-			<input type="text" name="comment_author" id="comment_author" value="" tabindex="1" required="required">
+			<input type="text" name="comment_author" id="comment_author" tabindex="1" required="required">
 
 			<label for="email" class="required">Your email:</label>
-			<input type="email" name="email" id="email" value="" tabindex="2" required="required">
+			<input type="email" name="email" id="email" tabindex="2" required="required">
 
 			<label for="comment" class="required">Your message</label>
-			<textarea name="comment" id="comment" rows="10" tabindex="4"	 required="required"></textarea>
+			<textarea name="comment" id="comment" rows="10" tabindex="4" required="required"></textarea>
 
 			<!-- comment_post_ID value hard-coded as 1 -->
 			<input type="hidden" name="comment_post_ID" value="<?php echo($comment_post_ID); ?>" id="comment_post_ID" />

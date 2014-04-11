@@ -104,6 +104,7 @@ class WebserviceController extends BaseController {
                  */
                 $profile = new Profile();
                 $profile->username = $result['name'];
+                $profile->imgpath  = "/pics/default.jpg";
                 $profile->save();
 
                 Auth::login($user);
@@ -201,6 +202,7 @@ class WebserviceController extends BaseController {
 
                 $profile = new Profile();
                 $profile->username = $result['name'];
+                $profile->imgpath  = "/pics/default.jpg";
                 $profile->save();
 
                 Auth::login($user);

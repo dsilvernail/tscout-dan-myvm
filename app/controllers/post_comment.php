@@ -4,21 +4,24 @@ class post_comment extends BaseController {
 
 	File::getRequire('assets/dist/pert/Persistence.php');
   File::getRequire('assets/dist/pert/squeeks-Pusher-PHP/lib/Pusher.php');
-  File::getRequire('assets/dist/pert/pusher_config.php')
+  File::getRequire('assets/dist/pert/pusher_config.php');
 
-	$ajax = ($_SERVER[ 'HTTP_X_REQUESTED_WITH' ] === 'XMLHttpRequest');
+  public function postComment() {
+  	$ajax = ($_SERVER[ 'HTTP_X_REQUESTED_WITH' ] === 'XMLHttpRequest');
 
-	$db = new Persistence();
-	$added = $db->add_comment($_POST);
+  	$db = new Persistence();
+  	$added = $db->add_comment($_POST);
 
-	if($added) {
-  	$channel_name = 'comments-' . $added['comment_post_ID'];
-  	$event_name = 'new_comment';
-  	$socket_id = (isset($_POST['socket_id'])?$_POST['socket_id']:null);
+  	if($added) {
+    	$channel_name = 'comments-' . $added['comment_post_ID'];
+    	$event_name = 'new_comment';
+    	$socket_id = (isset($_POST['socket_id'])?$_POST['socket_id']:null);
+    
+   	$pusher = new Pusher(APP_KEY, APP_SECRET, APP_ID);
+    	$pusher->trigger($channel_name, $event_name, $added, $socket_id);
+  	}
+
   
- 	$pusher = new Pusher(APP_KEY, APP_SECRET, APP_ID);
-  	$pusher->trigger($channel_name, $event_name, $added, $socket_id);
-	}
 
 	if($ajax) {
   		sendAjaxResponse($added);'2b10f3c8182f83e0c494'
@@ -27,7 +30,8 @@ class post_comment extends BaseController {
   	sendStandardResponse($added); 
 	}
 
-	function sendAjaxResponse($added) {
+  }
+	private function sendAjaxResponse($added) {
   		header("Content-Type: application/json");
   		if($added) {
     		header( 'Status: 201' );
@@ -38,7 +42,7 @@ class post_comment extends BaseController {
   		}
 	}
 
-	function sendStandardResponse($added) {
+	private function sendStandardResponse($added) {
   		if($added) {
     		header( 'Location: index.php' );
   		}

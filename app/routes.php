@@ -88,9 +88,12 @@ Route::group(array('before' => 'auth'), function(){
             'uses' => 'UserController@profileSetup',
         ]);
 
+        Route::resource('posts/post_comment', 'PostsController@post_comment');
+        //Route::post('post_comment', );
+
         Route::resource('profiles', 'ProfilesController');
         
-        Route::any('post_comment.php', 'post_comment');
+        
 });
 
 

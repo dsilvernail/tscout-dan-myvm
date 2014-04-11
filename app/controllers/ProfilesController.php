@@ -2,6 +2,7 @@
 
 class ProfilesController extends BaseController {
 
+
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -45,8 +46,17 @@ class ProfilesController extends BaseController {
 	{
 		$profile = Profile::find($id);
 
+		$following = User::find($id)->friends()->get();
 
-        return View::make('profiles.show', compact('profile'));
+		$friends_id = array();
+        foreach ($following as $f) {
+            $friend = Profile::find($f->friend_id);
+            $friends_id[] = $friend->username;
+        }
+
+
+        return View::make('profiles.show', compact('profile'))
+        		->with('friends_id', $friends_id);
 	}
 
 
@@ -82,5 +92,9 @@ class ProfilesController extends BaseController {
 	{
 		//
 	}
+
+
+			
+		
 
 }

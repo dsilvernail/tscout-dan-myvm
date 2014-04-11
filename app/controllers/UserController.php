@@ -96,9 +96,20 @@ class UserController extends BaseController {
     public function profileAction()
     {
         $user_id = Auth::user()->id;
+        $user = Auth::user()->get();
 
         $profile = Profile::find($user_id);
-        return View::make("user/profile", compact('profile'));
+
+        $following = Auth::user()->friends()->get();
+        $friends_id = array();
+        foreach ($following as $f) {
+            $friend = Profile::find($f->friend_id);
+            $friends_id[] = $friend->username;
+        }
+
+
+        return View::make("user/profile", compact('profile'))
+                ->with('friends_id', $friends_id);
     }
 
      public function findUsers()

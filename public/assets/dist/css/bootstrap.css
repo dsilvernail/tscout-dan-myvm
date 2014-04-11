@@ -7,8 +7,6 @@
  */
 
 /*! normalize.css v2.1.3 | MIT License | git.io/normalize */
-@import url("reset.css");
-@import url("global-forms.css");
 article,
 aside,
 details,
@@ -7133,63 +7131,4 @@ td.visible-print {
   td.hidden-print {
     display: none !important;
   }
-}
-
-/* Blog */
-.hentry {
-  border-bottom: 1px solid #eee;
-  padding: 1.5em 0;
-}
-li:last-child .hentry, #content > .hentry {border: 0; margin: 0;}
-#content > .hentry {padding: 1em 0;}
- 
-.entry-title {font-size: 1.429em; margin-bottom: 0;}
-.entry-title a:link, .entry-title a:visited {text-decoration: none;}
- 
-.hentry .post-info * {font-style: normal;}
- 
-  /* Content */
-  .hentry footer {margin-bottom: 2em;}
-  .hentry footer address {display: inline;}
-  #posts-list footer address {display: block;}
- 
-  /* Blog Index */
-  #posts-list {list-style: none; margin: 0;}
-  #posts-list .hentry {padding-left: 200px; position: relative;}
-  #posts-list footer {
-    left: 10px;
-    position: absolute;
-    top: 1.5em;
-    width: 190px;
-  }
-  #posts-list .hentry:hover {
-    background: #C64350;
-    color: #fff;
-  }
-  #posts-list .hentry:hover a:link, #posts-list .hentry:hover a:visited {
-    color: #F6CF74;
-    text-shadow: 1px 1px 1px #333;
-  }
-  #respond {
-  margin-top: 40px;
-}
-#posts-list.has-comments li.no-comments {
-  display: none;
-}
-#respond input[type='text'],
-#respond input[type='email'], 
-#respond textarea {
-  margin-bottom: 10px;
-  display: block;
-  width: 100%;
-
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -o-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -khtml-border-radius: 5px;
-  border-radius: 5px;
-
-  line-height: 1.4em;
 }

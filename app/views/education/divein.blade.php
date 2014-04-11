@@ -23,7 +23,7 @@
 		<div class="col-md-11">
 			<h2>Why are webservices so beneficial to companies that provide web applications?</h2>
 			<p>List the general benefits. How it reduces cost because the company doesn't have to hire so many people to create
-				their own API and webserive...blahblahblah
+				their own API and webservices.
 			</p>
 
 		</div>
