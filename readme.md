@@ -19,3 +19,9 @@ Documentation for the entire framework can be found on the [Laravel website](htt
 ### License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+
+### Project
+
+Members: Dan Silvernail, Katie Sasek, Marky Duarte, Jaclyn Ayers
+
+This repository contains code created to prototype the TutorScout Senior Capstone Project. This project used the Laravel 4 web framework to create a base web application with a focus on webservice integration.
